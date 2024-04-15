@@ -112,3 +112,21 @@ logosWrappers.forEach(async (logoWrapper, i) => {
 });
 
 yearEl.textContent = new Date().getFullYear();
+
+//Email sending functionality
+const sendButton = document.getElementById("send-btn");
+const name = document.getElementById('name');
+const message = document.getElementById('message');
+
+function sendEmail() {
+  var email = 'aimmanuel925@gmail.com';
+  var subject = name.value;
+  var emailBody = message.value;
+
+  var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(emailBody);
+
+  window.location.href = mailtoLink;
+}
+
+sendButton.addEventListener('click', sendEmail);
+
