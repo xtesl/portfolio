@@ -123,13 +123,17 @@ function sendEmail() {
   var subject = name.value;
   var emailBody = message.value;
 
+  if (!subject || !emailBody) {
+    alert('Please fill all fields before sending an email.');
+    return; // Stop the function if any field is empty
+}
+
   var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(emailBody);
 
   window.location.href = mailtoLink;
 }
 
-if(name.value != '' && message.value != ''){
   
 sendButton.addEventListener('click', sendEmail);
-}
+
 
