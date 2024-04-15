@@ -128,5 +128,8 @@ function sendEmail() {
   window.location.href = mailtoLink;
 }
 
+if(name.value != '' && message.value != ''){
+  
 sendButton.addEventListener('click', sendEmail);
+}
 
